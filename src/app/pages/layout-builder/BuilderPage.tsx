@@ -422,7 +422,7 @@ const BuilderPage: React.FC = () => {
                     className={clsx('form-check-image form-check-success mb-10', {
                       active: config.app?.toolbar?.layout === 'classic',
                     })}
-                  >
+                  > 
                     <div className='form-check-wrapper'>
                       <img
                         src={toAbsoluteUrl('/media/misc/layout/toolbar-classic.png')}
