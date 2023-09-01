@@ -4,21 +4,18 @@ import {KTSVG, toAbsoluteUrl} from '../../../utrade/helpers'
 import {Link} from 'react-router-dom'
 import {Dropdown1} from '../../../utrade/partials'
 import {useLocation} from 'react-router'
-
 const AccountHeader: React.FC = () => {
   const location = useLocation()
-
   return (
     <div className='card mb-5 mb-xl-10'>
       <div className='card-body pt-9 pb-0'>
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
             <div className='symbol symbol-100px symbol-lg-160px symbol-fixed position-relative'>
-              <img src={toAbsoluteUrl('/media/avatars/300-1.jpg')} alt='Metronic' />
+              <img src={toAbsoluteUrl('/media/avatars/300-1.jpg')} alt='UTrade' />
               <div className='position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px'></div>
             </div>
           </div>
-
           <div className='flex-grow-1'>
             <div className='d-flex justify-content-between align-items-start flex-wrap mb-2'>
               <div className='d-flex flex-column'>
@@ -41,7 +38,6 @@ const AccountHeader: React.FC = () => {
                     Upgrade to Pro
                   </a>
                 </div>
-
                 <div className='d-flex flex-wrap fw-bold fs-6 mb-4 pe-2'>
                   <a
                     href='#'
@@ -75,14 +71,12 @@ const AccountHeader: React.FC = () => {
                   </a>
                 </div>
               </div>
-
               <div className='d-flex my-4'>
                 <a href='#' className='btn btn-sm btn-light me-2' id='kt_user_follow_button'>
                   <KTSVG
                     path='/media/icons/duotune/arrows/arr012.svg'
                     className='svg-icon-3 d-none'
                   />
-
                   <span className='indicator-label'>Follow</span>
                   <span className='indicator-progress'>
                     Please wait...
@@ -110,7 +104,6 @@ const AccountHeader: React.FC = () => {
                 </div>
               </div>
             </div>
-
             <div className='d-flex flex-wrap flex-stack'>
               <div className='d-flex flex-column flex-grow-1 pe-8'>
                 <div className='d-flex flex-wrap'>
@@ -122,10 +115,8 @@ const AccountHeader: React.FC = () => {
                       />
                       <div className='fs-2 fw-bolder'>4500$</div>
                     </div>
-
                     <div className='fw-bold fs-6 text-gray-400'>Earnings</div>
                   </div>
-
                   <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
                     <div className='d-flex align-items-center'>
                       <KTSVG
@@ -134,10 +125,8 @@ const AccountHeader: React.FC = () => {
                       />
                       <div className='fs-2 fw-bolder'>75</div>
                     </div>
-
                     <div className='fw-bold fs-6 text-gray-400'>Projects</div>
                   </div>
-
                   <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
                     <div className='d-flex align-items-center'>
                       <KTSVG
@@ -146,12 +135,10 @@ const AccountHeader: React.FC = () => {
                       />
                       <div className='fs-2 fw-bolder'>60%</div>
                     </div>
-
                     <div className='fw-bold fs-6 text-gray-400'>Success Rate</div>
                   </div>
                 </div>
               </div>
-
               <div className='d-flex align-items-center w-200px w-sm-300px flex-column mt-3'>
                 <div className='d-flex justify-content-between w-100 mt-auto mb-2'>
                   <span className='fw-bold fs-6 text-gray-400'>Profile Compleation</span>
@@ -168,7 +155,6 @@ const AccountHeader: React.FC = () => {
             </div>
           </div>
         </div>
-
         <div className='d-flex overflow-auto h-55px'>
           <ul className='nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder flex-nowrap'>
             <li className='nav-item'>
@@ -199,5 +185,4 @@ const AccountHeader: React.FC = () => {
     </div>
   )
 }
-
 export {AccountHeader}

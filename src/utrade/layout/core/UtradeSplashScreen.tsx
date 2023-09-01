@@ -8,27 +8,21 @@ import React, {
   Dispatch,
 } from 'react'
 import {WithChildren} from '../../helpers'
-
 const UtradeSplashScreenContext = createContext<Dispatch<SetStateAction<number>> | undefined>(
   undefined
 )
-
 const UtradeSplashScreenProvider: FC<WithChildren> = ({children}) => {
   const [count, setCount] = useState(0)
   let visible = count > 0
-
   useEffect(() => {
     const splashScreen = document.getElementById('splash-screen')
-
     // Show SplashScreen
     if (splashScreen && visible) {
       splashScreen.classList.remove('hidden')
-
       return () => {
         splashScreen.classList.add('hidden')
       }
     }
-
     // Hide SplashScreen
     let timeout: number
     if (splashScreen && !visible) {
@@ -36,34 +30,28 @@ const UtradeSplashScreenProvider: FC<WithChildren> = ({children}) => {
         splashScreen.classList.add('hidden')
       }, 3000)
     }
-
     return () => {
       clearTimeout(timeout)
     }
   }, [visible])
-
   return (
     <UtradeSplashScreenContext.Provider value={setCount}>
       {children}
     </UtradeSplashScreenContext.Provider>
   )
 }
-
 const LayoutSplashScreen: FC<{visible?: boolean}> = ({visible = true}) => {
   // Everything are ready - remove splashscreen
   const setCount = useContext(UtradeSplashScreenContext)
-
   useEffect(() => {
     if (!visible) {
       return
     }
-
     if (setCount) {
       setCount((prev) => {
         return prev + 1
       })
     }
-
     return () => {
       if (setCount) {
         setCount((prev) => {
@@ -72,8 +60,6 @@ const LayoutSplashScreen: FC<{visible?: boolean}> = ({visible = true}) => {
       }
     }
   }, [setCount, visible])
-
   return null
 }
-
-export {UtradeSplashScreenProvider as MetronicSplashScreenProvider, LayoutSplashScreen}
+export {UtradeSplashScreenProvider, LayoutSplashScreen}

@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import {FC} from 'react'
 import {toAbsoluteUrl} from '../../../helpers'
 import {useLang, setLanguage} from '../../../i18n/Utrade18n'
-
 const languages = [
   {
     lang: 'en',
@@ -36,7 +35,6 @@ const languages = [
     flag: toAbsoluteUrl('/media/flags/france.svg'),
   },
 ]
-
 const Languages: FC = () => {
   const lang = useLang()
   const currentLanguage = languages.find((x) => x.lang === lang)
@@ -55,12 +53,11 @@ const Languages: FC = () => {
             <img
               className='w-15px h-15px rounded-1 ms-2'
               src={currentLanguage?.flag}
-              alt='metronic'
+              alt='utrade'
             />
           </span>
         </span>
       </a>
-
       <div className='menu-sub menu-sub-dropdown w-175px py-4'>
         {languages.map((l) => (
           <div
@@ -75,7 +72,7 @@ const Languages: FC = () => {
               className={clsx('menu-link d-flex px-5', {active: l.lang === currentLanguage?.lang})}
             >
               <span className='symbol symbol-20px me-4'>
-                <img className='rounded-1' src={l.flag} alt='metronic' />
+                <img className='rounded-1' src={l.flag} alt='utrade' />
               </span>
               {l.name}
             </a>
@@ -85,5 +82,4 @@ const Languages: FC = () => {
     </div>
   )
 }
-
 export {Languages}

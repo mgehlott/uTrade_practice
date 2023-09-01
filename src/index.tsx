@@ -17,13 +17,12 @@ import './utrade/assets/sass/style.react.scss'
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
 /**
- * Creates `axios-mock-adapter` instance for provided `axios` instance, add
- * basic Metronic mocks and returns it.
+ * Creates `axios-mock-adapter` instance for provided `axios` instance
  *
  * @see https://github.com/ctimmerm/axios-mock-adapter
  */
 /**
- * Inject Metronic interceptors for axios.
+ * Inject your interceptors for axios.
  *
  * @see https://github.com/axios/axios#interceptors
  */

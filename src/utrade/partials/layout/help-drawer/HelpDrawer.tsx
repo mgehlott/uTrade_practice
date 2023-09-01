@@ -3,7 +3,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {KTSVG} from '../../../helpers'
-
 const HelpDrawer = () => {
   return (
     <div
@@ -23,7 +22,6 @@ const HelpDrawer = () => {
         {/* begin::Header */}
         <div className='card-header' id='kt_help_header'>
           <h5 className='card-title fw-bold text-gray-600'>Learn & Get Inspired</h5>
-
           <div className='card-toolbar'>
             <button
               type='button'
@@ -35,7 +33,6 @@ const HelpDrawer = () => {
           </div>
         </div>
         {/* end::Header */}
-
         {/* begin::Body */}
         <div className='card-body' id='kt_help_body'>
           {/* begin::Content */}
@@ -58,7 +55,6 @@ const HelpDrawer = () => {
                 </a>
               </h2>
               {/* end::Heading */}
-
               {/* begin::Description */}
               <div className='fs-5 fw-bold mb-5'>
                 <span className='text-gray-500'>
@@ -69,7 +65,6 @@ const HelpDrawer = () => {
                 </a>
               </div>
               {/* end::Description */}
-
               {/* begin::Link */}
               <a
                 href='https://devs.keenthemes.com'
@@ -80,7 +75,6 @@ const HelpDrawer = () => {
               {/* end::Link */}
             </div>
             {/* end::Support */}
-
             {/* begin::Link */}
             <div className='d-flex align-items-center mb-7'>
               {/* begin::Icon */}
@@ -96,10 +90,7 @@ const HelpDrawer = () => {
                 {/* begin::Wrapper */}
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
-                  <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/quick-start'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
-                  >
+                  <a href='#' className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'>
                     Documentation &amp; Videos
                   </a>
                   {/* end::Title */}
@@ -133,10 +124,7 @@ const HelpDrawer = () => {
                 {/* begin::Wrapper */}
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
-                  <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/utilities'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
-                  >
+                  <a href='#' className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'>
                     Plugins &amp; Components
                   </a>
                   {/* end::Title */}
@@ -207,10 +195,7 @@ const HelpDrawer = () => {
                 {/* begin::Wrapper */}
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
-                  <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/changelog'
-                    className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
-                  >
+                  <a href='#' className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'>
                     What's New
                   </a>
                   {/* end::Title */}
@@ -238,5 +223,4 @@ const HelpDrawer = () => {
     </div>
   )
 }
-
 export {HelpDrawer}

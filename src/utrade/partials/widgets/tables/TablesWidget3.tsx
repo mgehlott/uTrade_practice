@@ -2,11 +2,9 @@
 import React from 'react'
 import {KTSVG} from '../../../helpers'
 import {Dropdown1} from '../../content/dropdown/Dropdown1'
-
 type Props = {
   className: string
 }
-
 const TablesWidget3: React.FC<Props> = ({className}) => {
   return (
     <div className={`card ${className}`}>
@@ -107,7 +105,7 @@ const TablesWidget3: React.FC<Props> = ({className}) => {
                     New Users
                   </a>
                 </td>
-                <td className='text-end text-muted fw-semibold'>Laravel, Metronic</td>
+                <td className='text-end text-muted fw-semibold'>Laravel, UTrade</td>
                 <td className='text-end text-muted fw-semibold'>890 Users</td>
                 <td className='text-end text-dark fw-bold fs-6 pe-0'>1.5MB</td>
               </tr>
@@ -162,5 +160,4 @@ const TablesWidget3: React.FC<Props> = ({className}) => {
     </div>
   )
 }
-
 export {TablesWidget3}

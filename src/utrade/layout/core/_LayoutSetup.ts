@@ -1,8 +1,6 @@
 import {ILayout, ILayoutCSSClasses, ILayoutHTMLAttributes, ILayoutCSSVariables} from './_Models'
 import {DefaultConfig} from './_LayoutConfig'
-
 const LAYOUT_CONFIG_KEY = process.env.REACT_APP_BASE_LAYOUT_CONFIG_KEY || 'LayoutConfig'
-
 const getLayoutFromLocalStorage = (): ILayout => {
   const ls = localStorage.getItem(LAYOUT_CONFIG_KEY)
   if (ls) {
@@ -14,7 +12,6 @@ const getLayoutFromLocalStorage = (): ILayout => {
   }
   return DefaultConfig
 }
-
 const setLayoutIntoLocalStorage = (config: ILayout) => {
   try {
     localStorage.setItem(LAYOUT_CONFIG_KEY, JSON.stringify(config))
@@ -22,7 +19,6 @@ const setLayoutIntoLocalStorage = (config: ILayout) => {
     console.error(er)
   }
 }
-
 const getEmptyCssClasses = (): ILayoutCSSClasses => {
   return {
     header: [],
@@ -42,7 +38,6 @@ const getEmptyCssClasses = (): ILayoutCSSClasses => {
     pageContainer: [],
   }
 }
-
 const getEmptyHTMLAttributes = () => {
   return {
     asideMenu: new Map(),
@@ -52,38 +47,31 @@ const getEmptyHTMLAttributes = () => {
     pageTitle: new Map(),
   }
 }
-
 const getEmptyCSSVariables = () => {
   return {
     body: new Map(),
   }
 }
-
 class LayoutSetup {
   public static isLoaded: boolean = false
   public static config: ILayout = getLayoutFromLocalStorage()
   public static classes: ILayoutCSSClasses = getEmptyCssClasses()
   public static attributes: ILayoutHTMLAttributes = getEmptyHTMLAttributes()
   public static cssVariables: ILayoutCSSVariables = getEmptyCSSVariables()
-
   private static initCSSClasses(): void {
     LayoutSetup.classes = getEmptyCssClasses()
   }
-
   private static initHTMLAttributes(): void {
     LayoutSetup.attributes = Object.assign({}, getEmptyHTMLAttributes())
   }
-
   private static initCSSVariables(): void {
     LayoutSetup.cssVariables = getEmptyCSSVariables()
   }
-
   private static initConfig(config: ILayout): ILayout {
     let updatedConfig = LayoutSetup.initLayoutSettings(config)
     updatedConfig = LayoutSetup.initToolbarSetting(updatedConfig)
     return LayoutSetup.initWidthSettings(updatedConfig)
   }
-
   private static initLayoutSettings(config: ILayout): ILayout {
     const updatedConfig = {...config}
     // clear body classes
@@ -95,9 +83,8 @@ class LayoutSetup {
     document.body.setAttribute('style', '')
     document.body.setAttribute('id', 'kt_app_body')
     document.body.setAttribute('data-kt-app-layout', updatedConfig.layoutType)
-    document.body.setAttribute('data-kt-name', 'metronic')
+    document.body.setAttribute('data-kt-name', 'utrade')
     document.body.classList.add('app-default')
-
     const pageWidth = updatedConfig.app?.general?.pageWidth
     if (updatedConfig.layoutType === 'light-header' || updatedConfig.layoutType === 'dark-header') {
       if (pageWidth === 'default') {
@@ -105,22 +92,18 @@ class LayoutSetup {
         if (header && header.default && header.default.container) {
           header.default.container = 'fixed'
         }
-
         const toolbar = updatedConfig.app?.toolbar
         if (toolbar) {
           toolbar.container = 'fixed'
         }
-
         const content = updatedConfig.app?.content
         if (content) {
           content.container = 'fixed'
         }
-
         const footer = updatedConfig.app?.footer
         if (footer) {
           footer.container = 'fixed'
         }
-
         const updatedApp = {
           ...updatedConfig.app,
           ...header,
@@ -133,7 +116,6 @@ class LayoutSetup {
     }
     return updatedConfig
   }
-
   private static initToolbarSetting(config: ILayout): ILayout {
     const updatedConfig = {...config}
     const appHeaderDefaultContent = updatedConfig.app?.header?.default?.content
@@ -146,7 +128,6 @@ class LayoutSetup {
       }
       return updatedConfig
     }
-
     const pageTitle = updatedConfig.app?.pageTitle
     if (pageTitle) {
       pageTitle.description = false
@@ -154,17 +135,14 @@ class LayoutSetup {
       const updatedApp = {...updatedConfig.app, ...pageTitle}
       return {...updatedConfig, app: updatedApp}
     }
-
     return updatedConfig
   }
-
   private static initWidthSettings(config: ILayout): ILayout {
     const updatedConfig = {...config}
     const pageWidth = updatedConfig.app?.general?.pageWidth
     if (!pageWidth || pageWidth === 'default') {
       return config
     }
-
     const header = updatedConfig.app?.header
     if (header && header.default) {
       header.default.container = pageWidth
@@ -190,7 +168,6 @@ class LayoutSetup {
     }
     return {...updatedConfig, app: updatedApp}
   }
-
   public static updatePartialConfig(fieldsToUpdate: Partial<ILayout>): ILayout {
     const config = LayoutSetup.config
     const updatedConfig = {...config, ...fieldsToUpdate}
@@ -202,16 +179,13 @@ class LayoutSetup {
     LayoutSetup.isLoaded = true // remove loading there
     return updatedConfig
   }
-
   public static setConfig(config: ILayout): void {
     setLayoutIntoLocalStorage(config)
   }
-
   public static bootstrap = (() => {
     LayoutSetup.updatePartialConfig(LayoutSetup.config)
   })()
 }
-
 export {
   LayoutSetup,
   getLayoutFromLocalStorage,

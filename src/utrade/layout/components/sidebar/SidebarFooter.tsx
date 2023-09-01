@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
 import {KTSVG} from '../../../helpers'
-
 const SidebarFooter = () => {
   return (
     <div className='app-sidebar-footer flex-column-auto pt-2 pb-6 px-6' id='kt_app_sidebar_footer'>
@@ -11,7 +10,7 @@ const SidebarFooter = () => {
         data-bs-toggle='tooltip'
         data-bs-trigger='hover'
         data-bs-dismiss-='click'
-        title='Metronic Docs & Components'
+        title='UTrade Docs & Components'
       >
         <span className='btn-label'>Docs & Components</span>
         <KTSVG path='/media/icons/duotune/general/gen005.svg' className='btn-icon svg-icon-2 m-0' />
@@ -19,5 +18,4 @@ const SidebarFooter = () => {
     </div>
   )
 }
-
 export {SidebarFooter}

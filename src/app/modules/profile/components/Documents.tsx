@@ -2,7 +2,6 @@
 import React from 'react'
 import {KTSVG} from '../../../../utrade/helpers'
 import {Card4} from '../../../../utrade/partials/content/cards/Card4'
-
 export function Documents() {
   return (
     <>
@@ -11,7 +10,6 @@ export function Documents() {
           My Documents
           <span className='fs-6 text-gray-400 fw-bold ms-1'>100+ resources</span>
         </h3>
-
         <div className='d-flex my-2'>
           <div className='d-flex align-items-center position-relative me-4'>
             <KTSVG
@@ -25,13 +23,11 @@ export function Documents() {
               placeholder='Search'
             />
           </div>
-
           <a href='#' className='btn btn-primary btn-sm'>
             File Manager
           </a>
         </div>
       </div>
-
       <div className='row g-6 g-xl-9 mb-6 mb-xl-9'>
         <div className='col-12 col-sm-12 col-xl'>
           <Card4
@@ -55,7 +51,6 @@ export function Documents() {
           />
         </div>
       </div>
-
       <div className='row g-6 g-xl-9 mb-6 mb-xl-9'>
         <div className='col-12 col-sm-12 col-xl'>
           <Card4 icon='/media/svg/files/pdf.svg' title='Project Reqs..' description='3 days ago' />
@@ -71,13 +66,12 @@ export function Documents() {
           />
         </div>
         <div className='col-12 col-sm-12 col-xl'>
-          <Card4 icon='/media/svg/files/ai.svg' title='Metronic Logo' description='5 days ago' />
+          <Card4 icon='/media/svg/files/ai.svg' title='UTrade Logo' description='5 days ago' />
         </div>
         <div className='col-12 col-sm-12 col-xl'>
           <Card4 icon='/media/svg/files/sql.svg' title='Orders backup' description='1 week ago' />
         </div>
       </div>
-
       <div className='row g-6 g-xl-9 mb-6 mb-xl-9'>
         <div className='col-12 col-sm-12 col-xl'>
           <Card4

@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-
 type Props = {
   className: string
 }
-
 const TablesWidget5: React.FC<Props> = ({className}) => {
   return (
     <div className={`card ${className}`}>
@@ -156,7 +154,7 @@ const TablesWidget5: React.FC<Props> = ({className}) => {
                       </a>
                       <span className='text-muted fw-semibold d-block'>Awesome Users</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>Laravel,Metronic</td>
+                    <td className='text-end text-muted fw-semibold'>Laravel,UTrade</td>
                     <td className='text-end'>
                       <span className='badge badge-light-primary'>Success</span>
                     </td>
@@ -480,7 +478,7 @@ const TablesWidget5: React.FC<Props> = ({className}) => {
                       </a>
                       <span className='text-muted fw-semibold d-block'>Awesome Users</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>Laravel,Metronic</td>
+                    <td className='text-end text-muted fw-semibold'>Laravel,UTrade</td>
                     <td className='text-end'>
                       <span className='badge badge-light-primary'>Success</span>
                     </td>
@@ -543,5 +541,4 @@ const TablesWidget5: React.FC<Props> = ({className}) => {
     </div>
   )
 }
-
 export {TablesWidget5}
